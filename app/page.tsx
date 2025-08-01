@@ -1,13 +1,20 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Mail, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe } from "lucide-react";
+import {Badge} from "@/components/ui/badge";
+import {Button} from "@/components/ui/button";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Separator} from "@/components/ui/separator";
+import {Code, Database, ExternalLink, Github, Globe, Linkedin, Mail, MapPin} from "lucide-react";
 import Image from "next/image";
 
 const projects = [
+  {
+    title: "Hệ thống làm việc nhóm ",
+    description: "Công cụ quản lý dự án cộng tác với cập nhật thời gian thực, tính năng cộng tác nhóm và theo dõi tiến độ. Bao gồm bảng Kanban, phân công nhiệm vụ và thông báo hạn chót.",
+    technologies: ["Next.js", "PostgreSQL", "Tailwind CSS"],
+    status: "Hoàn thành",
+    link: "https://realtime.hphucdev.id.vn/"
+  },
   {
     title: "Nền tảng Thương mại Điện tử",
     description: "Ứng dụng web thương mại điện tử full-stack với xác thực người dùng, tích hợp thanh toán và bảng điều khiển quản trị. Bao gồm các tính năng như danh mục sản phẩm, giỏ hàng, quản lý đơn hàng và theo dõi tồn kho thời gian thực.",
@@ -15,13 +22,7 @@ const projects = [
     status: "Hoàn thành",
     link: "#"
   },
-  {
-    title: "Hệ thống Quản lý Công việc",
-    description: "Công cụ quản lý dự án cộng tác với cập nhật thời gian thực, tính năng cộng tác nhóm và theo dõi tiến độ. Bao gồm bảng Kanban, phân công nhiệm vụ và thông báo hạn chót.",
-    technologies: ["Next.js", "PostgreSQL", "Prisma", "WebSocket", "Tailwind CSS"],
-    status: "Hoàn thành",
-    link: "#"
-  },
+
   {
     title: "Ứng dụng Dự báo Thời tiết",
     description: "Ứng dụng thời tiết đáp ứng cung cấp điều kiện hiện tại và dự báo 7 ngày. Bao gồm dữ liệu thời tiết theo vị trí, bản đồ tương tác và cảnh báo thời tiết nghiêm trọng.",
@@ -87,8 +88,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="relative w-32 h-32 mx-auto mb-8">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center text-white text-4xl font-bold">
-                HP
+              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 p-1">
+                <Image
+                    src="/images/avatar.jpg"
+                    alt="Hoàng Phúc"
+                    width={120}
+                    height={120}
+                    className="w-full h-full rounded-full object-cover"
+                />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -217,9 +224,10 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button variant="outline" size="sm" className="w-full" onClick={() => window.open(project.link, '_blank')}>
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Xem Dự án
+
                   </Button>
                 </CardContent>
               </Card>
