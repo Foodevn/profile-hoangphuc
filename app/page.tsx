@@ -9,31 +9,31 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce web application with user authentication, payment integration, and admin dashboard. Features include product catalog, shopping cart, order management, and real-time inventory tracking.",
+    title: "Nền tảng Thương mại Điện tử",
+    description: "Ứng dụng web thương mại điện tử full-stack với xác thực người dùng, tích hợp thanh toán và bảng điều khiển quản trị. Bao gồm các tính năng như danh mục sản phẩm, giỏ hàng, quản lý đơn hàng và theo dõi tồn kho thời gian thực.",
     technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
-    status: "Completed",
+    status: "Hoàn thành",
     link: "#"
   },
   {
-    title: "Task Management System",
-    description: "A collaborative project management tool with real-time updates, team collaboration features, and progress tracking. Includes Kanban boards, task assignments, and deadline notifications.",
+    title: "Hệ thống Quản lý Công việc",
+    description: "Công cụ quản lý dự án cộng tác với cập nhật thời gian thực, tính năng cộng tác nhóm và theo dõi tiến độ. Bao gồm bảng Kanban, phân công nhiệm vụ và thông báo hạn chót.",
     technologies: ["Next.js", "PostgreSQL", "Prisma", "WebSocket", "Tailwind CSS"],
-    status: "Completed",
+    status: "Hoàn thành",
     link: "#"
   },
   {
-    title: "Weather Forecast App",
-    description: "A responsive weather application providing current conditions and 7-day forecasts. Features location-based weather data, interactive maps, and severe weather alerts.",
+    title: "Ứng dụng Dự báo Thời tiết",
+    description: "Ứng dụng thời tiết đáp ứng cung cấp điều kiện hiện tại và dự báo 7 ngày. Bao gồm dữ liệu thời tiết theo vị trí, bản đồ tương tác và cảnh báo thời tiết nghiêm trọng.",
     technologies: ["React Native", "OpenWeather API", "Redux", "TypeScript", "Maps API"],
-    status: "Completed",
+    status: "Hoàn thành",
     link: "#"
   },
   {
-    title: "University Course Manager",
-    description: "A comprehensive system for managing university courses, student enrollments, and academic schedules. Includes grade tracking, attendance monitoring, and automated report generation.",
+    title: "Hệ thống Quản lý Khóa học Đại học",
+    description: "Hệ thống toàn diện để quản lý các khóa học đại học, đăng ký sinh viên và lịch trình học thuật. Bao gồm theo dõi điểm số, giám sát chuyên cần và tạo báo cáo tự động.",
     technologies: ["Java", "Spring Boot", "MySQL", "Angular", "Docker"],
-    status: "In Progress",
+    status: "Đang thực hiện",
     link: "#"
   }
 ];
@@ -41,8 +41,8 @@ const projects = [
 const skills = [
   { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Angular"] },
   { category: "Backend", items: ["Node.js", "Java", "Spring Boot", "Express", "Python"] },
-  { category: "Database", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis"] },
-  { category: "Tools & Others", items: ["Git", "Docker", "AWS", "Firebase", "REST APIs"] }
+  { category: "Cơ sở dữ liệu", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis"] },
+  { category: "Công cụ & Khác", items: ["Git", "Docker", "AWS", "Firebase", "REST APIs"] }
 ];
 
 export default function Home() {
@@ -63,19 +63,19 @@ export default function Home() {
                 onClick={() => scrollToSection('about')} 
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                About1
+                Giới thiệu
               </button>
               <button 
                 onClick={() => scrollToSection('projects')} 
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                Projects
+                Dự án
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                Contact
+                Liên hệ
               </button>
             </div>
           </div>
@@ -95,10 +95,10 @@ export default function Home() {
               Hoàng Phúc
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-6">
-              IT Student - Software Engineering
+              Sinh viên CNTT - Kỹ thuật Phần mềm
             </p>
             <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
-              Da Lat University • Passionate about creating innovative software solutions
+              Trường Đại học Đà Lạt • Đam mê tạo ra các giải pháp phần mềm sáng tạo
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -106,14 +106,14 @@ export default function Home() {
                 onClick={() => scrollToSection('projects')}
                 className="bg-blue-600 hover:bg-blue-700"
               >
-                View My Work
+                Xem Công việc của Tôi
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={() => scrollToSection('contact')}
               >
-                Get In Touch
+                Liên hệ
               </Button>
             </div>
           </div>
@@ -124,43 +124,43 @@ export default function Home() {
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Giới thiệu về Tôi</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              I'm a dedicated Information Technology student at Da Lat University, specializing in Software Engineering. 
-              My passion lies in developing innovative software solutions and staying current with emerging technologies.
+              Tôi là một sinh viên Công nghệ Thông tin tận tâm tại Trường Đại học Đà Lạt, chuyên ngành Kỹ thuật Phần mềm. 
+              Đam mê của tôi là phát triển các giải pháp phần mềm sáng tạo và luôn cập nhật với các công nghệ mới nổi.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">My Journey</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Hành trình của Tôi</h3>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Currently pursuing my Bachelor's degree in Software Engineering at Da Lat University, 
-                  I have developed a strong foundation in computer science principles and software development practices.
+                  Hiện đang theo học bằng Cử nhân ngành Kỹ thuật Phần mềm tại Trường Đại học Đà Lạt, 
+                  tôi đã xây dựng được nền tảng vững chắc về các nguyên lý khoa học máy tính và thực hành phát triển phần mềm.
                 </p>
                 <p>
-                  My academic journey has equipped me with comprehensive knowledge in programming languages, 
-                  database management, web development, and software architecture. I'm particularly interested 
-                  in full-stack development and emerging technologies like cloud computing and AI.
+                  Hành trình học tập của tôi đã trang bị cho tôi kiến thức toàn diện về các ngôn ngữ lập trình, 
+                  quản lý cơ sở dữ liệu, phát triển web và kiến trúc phần mềm. Tôi đặc biệt quan tâm đến 
+                  phát triển full-stack và các công nghệ mới nổi như điện toán đám mây và AI.
                 </p>
                 <p>
-                  Through various projects and coursework, I've gained hands-on experience in building 
-                  scalable applications, working with teams, and solving complex technical challenges.
+                  Thông qua các dự án và bài tập khác nhau, tôi đã có được kinh nghiệm thực tế trong việc xây dựng 
+                  các ứng dụng có thể mở rộng, làm việc với nhóm và giải quyết các thách thức kỹ thuật phức tạp.
                 </p>
               </div>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Kỹ năng Kỹ thuật</h3>
               <div className="space-y-6">
                 {skills.map((skillGroup, index) => (
                   <div key={index}>
                     <h4 className="font-medium text-gray-900 mb-3 flex items-center">
                       {skillGroup.category === 'Frontend' && <Globe className="w-4 h-4 mr-2" />}
                       {skillGroup.category === 'Backend' && <Code className="w-4 h-4 mr-2" />}
-                      {skillGroup.category === 'Database' && <Database className="w-4 h-4 mr-2" />}
-                      {skillGroup.category === 'Tools & Others' && <ExternalLink className="w-4 h-4 mr-2" />}
+                      {skillGroup.category === 'Cơ sở dữ liệu' && <Database className="w-4 h-4 mr-2" />}
+                      {skillGroup.category === 'Công cụ & Khác' && <ExternalLink className="w-4 h-4 mr-2" />}
                       {skillGroup.category}
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -182,10 +182,10 @@ export default function Home() {
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dự án của Tôi</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Here are some of the projects I've worked on during my studies and personal time. 
-              Each project represents a step in my learning journey and showcases different technical skills.
+              Đây là một số dự án tôi đã làm việc trong quá trình học tập và thời gian cá nhân. 
+              Mỗi dự án đại diện cho một bước trong hành trình học tập của tôi và thể hiện các kỹ năng kỹ thuật khác nhau.
             </p>
           </div>
 
@@ -196,8 +196,8 @@ export default function Home() {
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl text-gray-900">{project.title}</CardTitle>
                     <Badge 
-                      variant={project.status === 'Completed' ? 'default' : 'secondary'}
-                      className={project.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}
+                      variant={project.status === 'Hoàn thành' ? 'default' : 'secondary'}
+                      className={project.status === 'Hoàn thành' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}
                     >
                       {project.status}
                     </Badge>
@@ -208,7 +208,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Technologies Used:</h4>
+                    <h4 className="font-medium text-gray-900 mb-2">Công nghệ sử dụng:</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="outline" className="text-xs">
@@ -219,7 +219,7 @@ export default function Home() {
                   </div>
                   <Button variant="outline" size="sm" className="w-full">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
+                    Xem Dự án
                   </Button>
                 </CardContent>
               </Card>
@@ -232,10 +232,10 @@ export default function Home() {
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Liên hệ</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology. 
-              Feel free to reach out!
+              Tôi luôn sẵn sàng thảo luận về các cơ hội mới, hợp tác hoặc chỉ đơn giản là trò chuyện về công nghệ. 
+              Hãy liên hệ với tôi!
             </p>
           </div>
 
@@ -256,15 +256,15 @@ export default function Home() {
                   <div className="flex items-center space-x-4">
                     <MapPin className="w-6 h-6 text-blue-600" />
                     <div>
-                      <h3 className="font-medium text-gray-900">Location</h3>
-                      <p className="text-gray-600">Da Lat, Lam Dong, Vietnam</p>
+                      <h3 className="font-medium text-gray-900">Vị trí</h3>
+                      <p className="text-gray-600">Đà Lạt, Lâm Đồng, Việt Nam</p>
                     </div>
                   </div>
                   
                   <Separator />
                   
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-4">Connect with me</h3>
+                    <h3 className="font-medium text-gray-900 mb-4">Kết nối với tôi</h3>
                     <div className="flex space-x-4">
                       <Button variant="outline" size="sm">
                         <Github className="w-4 h-4 mr-2" />
@@ -287,7 +287,7 @@ export default function Home() {
       <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2025 Hoàng Phúc. Built with Next.js and Tailwind CSS.
+            © 2025 Hoàng Phúc. Được xây dựng với Next.js và Tailwind CSS.
           </p>
         </div>
       </footer>
