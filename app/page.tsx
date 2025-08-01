@@ -63,7 +63,7 @@ export default function Home() {
                 onClick={() => scrollToSection('about')} 
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                About
+                About1
               </button>
               <button 
                 onClick={() => scrollToSection('projects')} 
