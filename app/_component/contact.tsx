@@ -1,7 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
 import {Separator} from "@/components/ui/separator";
-import {Github, Linkedin, Mail, MapPin} from "lucide-react";
+import {Facebook, Github, Linkedin, Mail, MapPin} from "lucide-react";
 
 
 export const Contact = () => {
@@ -26,7 +26,7 @@ export const Contact = () => {
                                     <Mail className="w-6 h-6 text-blue-600"/>
                                     <div>
                                         <h3 className="font-medium text-gray-900">Email</h3>
-                                        <p className="text-gray-600">hoangphuc.student@dlu.edu.vn</p>
+                                        <p className="text-gray-600">2212442@dlu.edu.vn</p>
                                     </div>
                                 </div>
 
@@ -45,13 +45,13 @@ export const Contact = () => {
                                 <div>
                                     <h3 className="font-medium text-gray-900 mb-4">Kết nối với tôi</h3>
                                     <div className="flex space-x-4">
-                                        <Button variant="outline" size="sm">
+                                        <Button variant="outline" size="sm" onClick={() => window.open('https://github.com/Foodevn', '_blank')}>
                                             <Github className="w-4 h-4 mr-2"/>
                                             GitHub
                                         </Button>
                                         <Button variant="outline" size="sm">
-                                            <Linkedin className="w-4 h-4 mr-2"/>
-                                            LinkedIn
+                                            <Facebook className="w-4 h-4 mr-2" onClick={() => window.open('https://www.facebook.com/phuc.hoang.841946/', '_blank')}/>
+                                            Facebook
                                         </Button>
                                     </div>
                                 </div>
