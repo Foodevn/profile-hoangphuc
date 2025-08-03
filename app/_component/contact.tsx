@@ -6,9 +6,12 @@ import { Separator } from "@/components/ui/separator";
 import { Facebook, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, useIntersectionObserver } from "@/lib/animations";
+import { useContent } from "@/lib/content";
 
 export const Contact = () => {
     const [ref, isIntersecting] = useIntersectionObserver();
+    const { content } = useContent();
+    const contactContent = content.contact;
 
     return (
         <motion.section
@@ -24,11 +27,9 @@ export const Contact = () => {
                     className="text-center mb-16"
                     variants={fadeInUp}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Liên hệ</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{contactContent.title}</h2>
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Tôi luôn sẵn sàng thảo luận về các cơ hội mới, hợp tác hoặc chỉ đơn giản là trò chuyện về công
-                        nghệ.
-                        Hãy liên hệ với tôi!
+                        {contactContent.description}
                     </p>
                 </motion.div>
 
@@ -45,7 +46,7 @@ export const Contact = () => {
                                         <Mail className="w-6 h-6 text-blue-600 dark:text-purple-400" />
                                         <div>
                                             <h3 className="font-medium text-foreground">Email</h3>
-                                            <p className="text-muted-foreground">2212442@dlu.edu.vn</p>
+                                            <p className="text-muted-foreground">{contactContent.email}</p>
                                         </div>
                                     </motion.div>
 
@@ -59,7 +60,7 @@ export const Contact = () => {
                                         <MapPin className="w-6 h-6 text-blue-600 dark:text-purple-400" />
                                         <div>
                                             <h3 className="font-medium text-foreground">Vị trí</h3>
-                                            <p className="text-muted-foreground">Đà Lạt, Lâm Đồng, Việt Nam</p>
+                                            <p className="text-muted-foreground">{contactContent.location}</p>
                                         </div>
                                     </motion.div>
 
@@ -75,7 +76,7 @@ export const Contact = () => {
                                                 <Button
                                                     variant="outline"
                                                     size="sm"
-                                                    onClick={() => window.open('https://github.com/Foodevn', '_blank')}
+                                                    onClick={() => window.open(contactContent.github, '_blank')}
                                                     className="transition-all duration-200"
                                                 >
                                                     <Github className="w-4 h-4 mr-2" />
@@ -89,7 +90,7 @@ export const Contact = () => {
                                                 <Button
                                                     variant="outline"
                                                     size="sm"
-                                                    onClick={() => window.open('https://www.facebook.com/phuc.hoang.841946/', '_blank')}
+                                                    onClick={() => window.open(contactContent.facebook, '_blank')}
                                                     className="transition-all duration-200"
                                                 >
                                                     <Facebook className="w-4 h-4 mr-2" />

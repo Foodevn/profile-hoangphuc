@@ -4,8 +4,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, floatingAnimation } from "@/lib/animations";
+import { useContent } from "@/lib/content";
 
 export const Hero = () => {
+    const { content } = useContent();
+    const heroContent = content.hero;
+
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         element?.scrollIntoView({ behavior: 'smooth' });
@@ -42,21 +46,21 @@ export const Hero = () => {
                         className="text-4xl md:text-6xl font-bold text-foreground mb-4"
                         variants={fadeInUp}
                     >
-                        Hoàng Phúc
+                        {heroContent.name}
                     </motion.h1>
 
                     <motion.p
                         className="text-xl md:text-2xl text-muted-foreground mb-6"
                         variants={fadeInUp}
                     >
-                        Sinh viên CNTT - Kỹ thuật Phần mềm
+                        {heroContent.title}
                     </motion.p>
 
                     <motion.p
                         className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto"
                         variants={fadeInUp}
                     >
-                        Trường Đại học Đà Lạt • Đam mê tạo ra các giải pháp phần mềm sáng tạo
+                        {heroContent.description}
                     </motion.p>
 
                     <motion.div

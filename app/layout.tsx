@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeScript } from '@/components/theme-script';
+import { AuthProvider } from '@/lib/auth';
+import { ContentProvider } from '@/lib/content';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,14 +24,18 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <ContentProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem={false}
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </ContentProvider>
+        </AuthProvider>
       </body>
     </html>
   );
