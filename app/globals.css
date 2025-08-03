@@ -44,31 +44,49 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 248 25% 5%;
+    /* Đen tím đậm */
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --card: 248 25% 8%;
+    /* Card tối hơn một chút */
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 248 25% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    --primary: 262 83% 58%;
+    /* Tím chính */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 248 15% 18%;
+    /* Xám tím */
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --muted: 248 15% 15%;
+    /* Muted tím */
+    --muted-foreground: 0 0% 65%;
+    --accent: 262 83% 58%;
+    /* Accent tím */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 248 15% 20%;
+    /* Border tím nhạt */
+    --input: 248 15% 15%;
+    --ring: 262 83% 58%;
+    /* Ring tím */
+    --chart-1: 262 83% 58%;
+    /* Tím */
+    --chart-2: 280 65% 60%;
+    /* Tím nhạt */
+    --chart-3: 240 70% 55%;
+    /* Xanh tím */
+    --chart-4: 300 75% 60%;
+    /* Hồng tím */
+    --chart-5: 320 80% 65%;
+    /* Magenta */
+
+    /* Gradient backgrounds */
+    --purple-gradient: linear-gradient(135deg, rgb(139, 92, 246) 0%, rgb(79, 70, 229) 100%);
+    --purple-glow: 0 0 20px rgba(139, 92, 246, 0.3);
   }
 }
 
@@ -76,7 +94,156 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom animations and utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse animation for accents */
+  .pulse-purple {
+    animation: pulse-purple 2s infinite;
+  }
+
+  /* Improved button hover effects */
+  .btn-purple-gradient {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    transition: all 0.3s ease;
+  }
+
+  .btn-purple-gradient:hover {
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-subtle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Purple theme enhancements for dark mode */
+.dark {
+  /* Gradient backgrounds */
+  --purple-gradient: linear-gradient(135deg, rgb(139, 92, 246) 0%, rgb(79, 70, 229) 100%);
+  --purple-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Glow effects for interactive elements in dark mode */
+.dark .hover-glow:hover {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Purple accent for borders in dark mode */
+.dark .border-accent {
+  border-color: hsl(262 83% 58% / 0.3);
+}
+
+/* Enhanced card styling for dark mode */
+.dark .card-purple {
+  background: linear-gradient(135deg,
+      hsl(248 25% 8%) 0%,
+      hsl(248 25% 12%) 100%);
+  border: 1px solid hsl(262 83% 58% / 0.2);
+}
+
+/* Text gradient for headings */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Scrollbar styling for dark mode */
+.dark::-webkit-scrollbar-track {
+  background: hsl(248 25% 8%);
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: hsl(262 83% 58% / 0.6);
+  border-radius: 4px;
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+  background: hsl(262 83% 58%);
 }
