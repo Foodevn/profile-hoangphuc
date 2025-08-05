@@ -1,6 +1,9 @@
 'use client';
 
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageToggle } from '@/components/language-toggle';
+import { ScrollProgress } from '@/components/scroll-progress';
+import { useLanguage } from '@/lib/language';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -10,6 +13,7 @@ import { slideInFromTop } from '@/lib/animations';
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useLanguage();
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -41,7 +45,7 @@ export const Navigation = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Giới thiệu
+                            {t('nav.about')}
                         </motion.button>
                         <motion.button
                             onClick={() => scrollToSection('projects')}
@@ -49,7 +53,7 @@ export const Navigation = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Dự án
+                            {t('nav.projects')}
                         </motion.button>
                         <motion.button
                             onClick={() => scrollToSection('contact')}
@@ -57,15 +61,23 @@ export const Navigation = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Liên hệ
+                            {t('nav.contact')}
                         </motion.button>
-                        <motion.div whileHover={{ scale: 1.05 }}>
-                            <ThemeToggle />
-                        </motion.div>
+                        <div className="flex items-center space-x-2">
+                            <motion.div whileHover={{ scale: 1.05 }}>
+                                <LanguageToggle />
+                            </motion.div>
+                            <motion.div whileHover={{ scale: 1.05 }}>
+                                <ThemeToggle />
+                            </motion.div>
+                        </div>
                     </div>
 
                     {/* Mobile Navigation */}
                     <div className="md:hidden flex items-center space-x-2">
+                        <motion.div whileHover={{ scale: 1.05 }}>
+                            <LanguageToggle />
+                        </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }}>
                             <ThemeToggle />
                         </motion.div>
@@ -74,7 +86,7 @@ export const Navigation = () => {
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Button variant="ghost" size="icon">
                                         <Menu className="h-5 w-5" />
-                                        <span className="sr-only">Mở menu</span>
+                                        <span className="sr-only">{t('nav.menu')}</span>
                                     </Button>
                                 </motion.div>
                             </SheetTrigger>
@@ -85,21 +97,21 @@ export const Navigation = () => {
                                         className="text-left text-muted-foreground hover:text-primary transition-colors py-2"
                                         whileHover={{ x: 5 }}
                                     >
-                                        Giới thiệu
+                                        {t('nav.about')}
                                     </motion.button>
                                     <motion.button
                                         onClick={() => scrollToSection('projects')}
                                         className="text-left text-muted-foreground hover:text-primary transition-colors py-2"
                                         whileHover={{ x: 5 }}
                                     >
-                                        Dự án
+                                        {t('nav.projects')}
                                     </motion.button>
                                     <motion.button
                                         onClick={() => scrollToSection('contact')}
                                         className="text-left text-muted-foreground hover:text-primary transition-colors py-2"
                                         whileHover={{ x: 5 }}
                                     >
-                                        Liên hệ
+                                        {t('nav.contact')}
                                     </motion.button>
                                 </div>
                             </SheetContent>
@@ -107,6 +119,9 @@ export const Navigation = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Scroll Progress Bar */}
+            <ScrollProgress className="absolute bottom-0 left-0 right-0" />
         </motion.nav>
     )
 }

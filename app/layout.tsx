@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeScript } from '@/components/theme-script';
 import { AuthProvider } from '@/lib/auth';
 import { ContentProvider } from '@/lib/content';
+import { LanguageProvider } from '@/lib/language';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,18 +25,20 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body className={inter.className}>
-        <AuthProvider>
-          <ContentProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem={false}
-              disableTransitionOnChange
-            >
-              {children}
-            </ThemeProvider>
-          </ContentProvider>
-        </AuthProvider>
+        <LanguageProvider>
+          <AuthProvider>
+            <ContentProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="dark"
+                enableSystem={false}
+                disableTransitionOnChange
+              >
+                {children}
+              </ThemeProvider>
+            </ContentProvider>
+          </AuthProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

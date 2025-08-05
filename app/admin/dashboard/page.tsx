@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth';
 import { useContent } from '@/lib/content';
+import { ScrollProgress } from '@/components/scroll-progress';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -44,7 +45,7 @@ export default function AdminDashboard() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-muted/40 dark:from-slate-900 dark:via-purple-900/30 dark:to-violet-900/20">
             {/* Header */}
-            <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative">
                 <div className="container flex h-14 items-center">
                     <div className="ml-16 mr-4 flex">
                         <h1 className="text-lg font-semibold">Bảng điều khiển Admin</h1>
@@ -65,6 +66,13 @@ export default function AdminDashboard() {
                         </Button>
                     </div>
                 </div>
+
+                {/* Admin Scroll Progress */}
+                <ScrollProgress
+                    className="absolute bottom-0 left-0 right-0"
+                    showPercentage={false}
+                    height="h-0.5"
+                />
             </header>
 
             <div className="container mx-auto p-6">

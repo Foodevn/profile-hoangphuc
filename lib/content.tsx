@@ -8,6 +8,7 @@ interface ContentData {
         title: string;
         description: string;
         university: string;
+        cta: string;
     };
     about: {
         title: string;
@@ -45,7 +46,8 @@ const defaultContent: ContentData = {
         name: 'Hoàng Phúc',
         title: 'Sinh viên CNTT - Kỹ thuật Phần mềm',
         description: 'Trường Đại học Đà Lạt • Đam mê tạo ra các giải pháp phần mềm sáng tạo',
-        university: 'Trường Đại học Đà Lạt'
+        university: 'Trường Đại học Đà Lạt',
+        cta: 'Xem Các Dự Án'
     },
     about: {
         title: 'Giới thiệu về Tôi',

@@ -6,6 +6,7 @@ import { About } from "@/app/_component/about";
 import { Navigation } from "@/app/_component/navigation";
 import { Footer } from "@/app/_component/footer";
 import { Hero } from "@/app/_component/hero";
+import { ReadingProgress } from "@/components/reading-progress";
 
 export default function Home() {
 
@@ -28,6 +29,9 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Reading Progress & Scroll to Top */}
+      <ReadingProgress />
     </div>
   );
 }

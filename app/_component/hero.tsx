@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer, floatingAnimation } from "@/lib/animations";
 import { useContent } from "@/lib/content";
+import { useLanguage } from "@/lib/language";
 
 export const Hero = () => {
     const { content } = useContent();
+    const { t } = useLanguage();
     const heroContent = content.hero;
 
     const scrollToSection = (sectionId: string) => {
@@ -53,14 +55,14 @@ export const Hero = () => {
                         className="text-xl md:text-2xl text-muted-foreground mb-6"
                         variants={fadeInUp}
                     >
-                        {heroContent.title}
+                        {heroContent.title || t('hero.title')}
                     </motion.p>
 
                     <motion.p
                         className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto"
                         variants={fadeInUp}
                     >
-                        {heroContent.description}
+                        {heroContent.description || t('hero.subtitle')}
                     </motion.p>
 
                     <motion.div
@@ -72,7 +74,7 @@ export const Hero = () => {
                             onClick={() => scrollToSection('projects')}
                             className="bg-blue-600 hover:bg-blue-700 dark:bg-purple-600 dark:hover:bg-purple-700 transform hover:scale-105 transition-all duration-200"
                         >
-                            Xem Công việc của Tôi
+                            {heroContent.cta || t('hero.cta')}
                         </Button>
                         <Button
                             variant="outline"
@@ -80,7 +82,7 @@ export const Hero = () => {
                             onClick={() => scrollToSection('contact')}
                             className="transform hover:scale-105 transition-all duration-200"
                         >
-                            Liên hệ
+                            {t('nav.contact')}
                         </Button>
                     </motion.div>
                 </div>

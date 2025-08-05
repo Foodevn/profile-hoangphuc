@@ -5,10 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, useIntersectionObserver } from "@/lib/animations";
 import { useContent } from "@/lib/content";
+import { useLanguage } from "@/lib/language";
 
 export const About = () => {
     const [ref, isIntersecting] = useIntersectionObserver();
     const { content } = useContent();
+    const { t } = useLanguage();
     const aboutContent = content.about;
 
     const skills = [
@@ -32,9 +34,11 @@ export const About = () => {
                     className="text-center mb-16"
                     variants={fadeInUp}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{aboutContent.title}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                        {aboutContent.title || t('about.title')}
+                    </h2>
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        {aboutContent.description}
+                        {aboutContent.description || t('about.description')}
                     </p>
                 </motion.div>
 
@@ -51,7 +55,7 @@ export const About = () => {
                     </motion.div>
 
                     <motion.div variants={fadeInRight}>
-                        <h3 className="text-2xl font-semibold text-foreground mb-6">Kỹ năng Kỹ thuật</h3>
+                        <h3 className="text-2xl font-semibold text-foreground mb-6">{t('about.skills')}</h3>
                         <div className="space-y-6">
                             {skills.map((skillGroup, index) => (
                                 <motion.div
